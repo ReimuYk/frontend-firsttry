@@ -1,0 +1,18 @@
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+cnpm install webpack -g
+npm install vue-cli -g
+
+cd %cd%
+vue init webpack-simple %name%
+
+cd %pro%
+npm install
+//npm version should be 3.0+
+cnpm install vue-router vue-resource --save
+
+npm run dev //start
+
+
+
+
+VScode vetur²å¼þ
