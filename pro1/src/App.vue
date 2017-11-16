@@ -1,41 +1,46 @@
 <template>
-  <div id="app">
+<div id="app">
+  <div>
+    <!--<img src="./pic/test.png" height=400>-->
     <img src="./assets/logo.png" id="imgtest">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2>{{ text1 }}</h2>
     <ul>
-      <li><a href="javascript:;" @click="Show">func</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <li><a href="javascript:;" @click="ShowInf">Show Information</a></li>
+      <li><a href="javascript:;" @click="Alt">Start!</a></li>
     </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  
   </div>
+  <div v-if="isstart">
+    <img src="./pic/test.png">
+  </div>
+</div>
 </template>
-
-
-
-
 
 <script>
 export default {
-  name: 'app',
+  name:'app',
   data () {
     return {
-      msg: 'my  code'
+      msg: 'A Simple Picture Scanner',
+      text1: 'Vue version 2.0',
+      isstart: false
     }
   },
 
   methods:{
       Show(){
-        alert("arg");
+        var adres="./dist/test.png";
+        document.getElementById('imgtest').src = adres;
+      },
+      Alt(){
+        document.getElementById('imgtest').src = '';
+        this.isstart=true;
+        // document.getElementById('imgtest').height = 250;
+        // document.getElementById('imgtest').width = 100;
+        // alert("alert!");
+      },
+      ShowInf(){
+        this.text1 = "Student ID:516030910257  Name:胡雨奇"
       }
   }
 
