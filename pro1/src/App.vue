@@ -2,29 +2,37 @@
 <div id="app">
   <div>
     <!--<img src="./pic/test.png" height=400>-->
-    <img src="./assets/logo.png" id="imgtest">
+    <img v-if="isstart === false" src="./assets/logo.png" id="imgtest">
     <h1>{{ msg }}</h1>
     <h2>{{ text1 }}</h2>
     <ul>
-      <li><a href="javascript:;" @click="ShowInf">Show Information</a></li>
-      <li><a href="javascript:;" @click="Alt">Start!</a></li>
+      <li><a v-if="showinf" href="javascript:;" @click="ShowInf">Show Information</a></li>
+      <li><a v-if="isstart === false" href="javascript:;" @click="Alt">Start!</a></li>
     </ul>
   </div>
   <div v-if="isstart">
-    <img src="./pic/test.png">
+    <!-- <img src="./pic/test.png"> -->
+    <h1>item1</h1>
+    
+    <content0></content0>
   </div>
 </div>
 </template>
 
 <script>
+import content0 from "./components/content0.vue"
 export default {
   name:'app',
   data () {
     return {
       msg: 'A Simple Picture Scanner',
       text1: 'Vue version 2.0',
-      isstart: false
+      isstart: false,
+      showinf: true
     }
+  },
+  components: {
+    content0
   },
 
   methods:{
@@ -33,14 +41,15 @@ export default {
         document.getElementById('imgtest').src = adres;
       },
       Alt(){
-        document.getElementById('imgtest').src = '';
+        //document.getElementById('imgtest').src = '';
         this.isstart=true;
         // document.getElementById('imgtest').height = 250;
         // document.getElementById('imgtest').width = 100;
         // alert("alert!");
       },
       ShowInf(){
-        this.text1 = "Student ID:516030910257  Name:胡雨奇"
+        this.text1 = "Student ID:516030910257  Name:胡雨奇";
+        this.showinf = false;
       }
   }
 
@@ -57,7 +66,7 @@ function Show(arg){
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -65,7 +74,8 @@ function Show(arg){
   margin-top: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
