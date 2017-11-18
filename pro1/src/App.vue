@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <div>
-    <!-- <img v-if="isstart === false" src="./assets/logo.png" id="imgtest"> -->
+    <img v-if="isstart === false" src="./assets/logo.png" id="imgtest">
     <h1>{{ msg }}</h1>
     <div v-if="isstart===false"></br></div>
     <h2>{{ text1 }}</h2>
