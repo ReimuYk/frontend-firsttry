@@ -48,12 +48,12 @@ h1{
 	display: block;
 	position: absolute;
 	width: 186px;
-	height: 116px;
+	height: 300px;
 	left: 10px;
 	top: 10px;
 	background: black;
 	overflow: hidden;
-	border: solid 5px black;
+	border: solid 5px gray;
 }
 #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
 #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}

@@ -1,20 +1,21 @@
 <template>
 <div id="app">
   <div>
-    <!--<img src="./pic/test.png" height=400>-->
-    <img v-if="isstart === false" src="./assets/logo.png" id="imgtest">
+    <!-- <img v-if="isstart === false" src="./assets/logo.png" id="imgtest"> -->
     <h1>{{ msg }}</h1>
+    <div v-if="isstart===false"></br></div>
     <h2>{{ text1 }}</h2>
+    <div v-if="isstart===false"></br></div>
     <ul>
       <li><a v-if="showinf" href="javascript:;" @click="ShowInf">Show Information</a></li>
       <li><a v-if="isstart === false" href="javascript:;" @click="Alt">Start!</a></li>
     </ul>
   </div>
   <div v-if="isstart">
-    <!-- <img src="./pic/test.png"> -->
-    <h1>item1</h1>
-    
     <content0></content0>
+    <img src="" height=400 id="bigpic">
+    <h3 id="textInf"></h3>
+    <div id="end"></div>
   </div>
 </div>
 </template>
@@ -93,3 +94,5 @@ a {
   color: #42b983;
 }
 </style>
+
+<style src="./components/css/style.css"></style>
